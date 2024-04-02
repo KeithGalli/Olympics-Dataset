@@ -79,6 +79,7 @@ if __name__ == "__main__":
             else:
                 errors.append(i)
                 print("Failed to retrieve the webpage. Status code:", response.status_code)
+                print(f"index {i}")
         except:
             errors.append(i)
             print(f"Error for index {i}")
