@@ -2,7 +2,6 @@ import requests
 import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
-from athletes import parse_athlete
 from io import StringIO
 import time
 import random
@@ -39,7 +38,7 @@ def get_athlete_results(soup, id):
     df.rename(columns={'Discipline (Sport) / Event': 'Event', 'NOC / Team': 'Team'}, inplace=True)
 
     # Drop the 'Unnamed: 6' column as it's not needed
-    df.drop(columns=['Unnamed: 6'], inplace=True)
+    df.drop(columns=['Unnamed: 6'], inplace=True, errors='ignore')
 
     # columns = ['Games', 'NOC / Team', 'Pos', 'Medal', 'As', 'Discipline (Sport)', 'Event']
     return df.iloc[rows_to_keep]
@@ -59,6 +58,8 @@ if __name__ == "__main__":
             print(i)
             results.to_csv(f'results/results_{i}.csv', index=False)
             output.to_csv(f'outputs/output_{i}.csv', index=False)
+        elif i % 250 == 0:
+            print(i)
         try:
             # Send a GET request to the website
             athlete_url = f"{base_athlete_url}/{i}"
