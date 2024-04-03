@@ -81,9 +81,10 @@ if __name__ == "__main__":
                 errors.append(i)
                 print("Failed to retrieve the webpage. Status code:", response.status_code)
                 print(f"index {i}")
-        except:
+        except Exception as e:
             errors.append(i)
             print(f"Error for index {i}")
+            print(e)
 
     output.to_csv('bios.csv',index=False)
     results.to_csv('athletes.csv', index=False)

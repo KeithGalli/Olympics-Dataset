@@ -1,0 +1,6 @@
+pandas
+numpy
+lxml
+pyarrow
+requests
+beautifulsoup4
