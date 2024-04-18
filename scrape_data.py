@@ -57,7 +57,7 @@ if __name__ == "__main__":
         if i % 1000 == 0 and i != 0:
             print(i)
             results.to_csv(f'results/results_{i}.csv', index=False)
-            output.to_csv(f'outputs/output_{i}.csv', index=False)
+            output.to_csv(f'athletes/bios_{i}.csv', index=False)
         elif i % 250 == 0:
             print(i)
         try:
@@ -87,8 +87,7 @@ if __name__ == "__main__":
             print(e)
 
     output.to_csv('bios.csv',index=False)
-    results.to_csv('athletes.csv', index=False)
+    results.to_csv('results.csv', index=False)
 
     with open("errors_list.txt", "w") as output:
         output.write(str(errors))
-
