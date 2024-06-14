@@ -86,7 +86,7 @@ if __name__ == "__main__":
             print(f"Error for index {i}")
             print(e)
 
-    output.to_csv('datalake/bronze/bios/bios.csv',index=False)
+    output.to_csv('datalake/bronze/athletes/bios.csv',index=False)
     results.to_csv('datalake/bronze/results/results.csv', index=False)
 
     with open("errors_list.txt", "w") as output:
