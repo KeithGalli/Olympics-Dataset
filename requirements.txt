@@ -4,3 +4,6 @@ lxml
 pyarrow
 requests
 beautifulsoup4
+shiny
+ipykernel
+jupyter
