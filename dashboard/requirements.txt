@@ -1,0 +1,12 @@
+pandas
+numpy
+lxml
+pyarrow
+requests
+beautifulsoup4
+shiny
+ipykernel
+jupyter
+geopy
+folium
+matplotlib
