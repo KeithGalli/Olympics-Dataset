@@ -7,3 +7,6 @@ beautifulsoup4
 shiny
 ipykernel
 jupyter
+geopy
+folium
+matplotlib
