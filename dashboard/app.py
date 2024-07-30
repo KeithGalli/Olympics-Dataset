@@ -55,6 +55,8 @@ def bios_df():
     bios = pd.read_csv(f'{directory}/clean-data/bios_locs.csv')
     print(input.country())
     bios = bios[bios['born_country'] == input.country()]
+    if input.medalists():
+        bios = bios.loc[bios['has_medaled']]
     country_df = bios[(bios['lat'].notna()) & (bios['long'].notna())]
     return country_df
 
